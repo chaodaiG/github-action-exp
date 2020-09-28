@@ -32,7 +32,7 @@ jobs:
           find . -type f -not -path './vendor/*' -not -path './third_party/*' -not -path './.git/*' -not -path './.github/workflows/*' |
           xargs grep -n "DO NOT SUBMIT" |
           reviewdog -efm="%f:%l:%m" \
-                -name="Reminder" \
+                -name="Make sure this is not a user error" \
                 -reporter="github-pr-check" \
                 -filter-mode="added" \
                 -fail-on-error="false" \
